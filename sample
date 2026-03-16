@@ -1,0 +1,1062 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Blake Report — Q1 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=IBM+Plex+Mono:wght@400;500&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #1a1410;
+    --paper: #f5f0e8;
+    --cream: #ede7d5;
+    --red: #b5271e;
+    --red-light: #e8352a;
+    --gold: #c9922a;
+    --muted: #7a6e60;
+    --rule: #c8b89a;
+    --border-heavy: #3d3025;
+    --section-bg: #ede8dc;
+    --highlight: #fdf6e3;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background-color: #d8cdb8;
+    font-family: 'Libre Baskerville', Georgia, serif;
+    color: var(--ink);
+    font-size: 16px;
+    line-height: 1.7;
+  }
+
+  .page {
+    max-width: 900px;
+    margin: 40px auto;
+    background: var(--paper);
+    box-shadow: 0 8px 48px rgba(0,0,0,0.28), 0 2px 8px rgba(0,0,0,0.15);
+    border-top: 6px solid var(--border-heavy);
+  }
+
+  /* ─── MASTHEAD ─── */
+  .masthead {
+    padding: 36px 56px 28px;
+    border-bottom: 3px double var(--border-heavy);
+    background: var(--paper);
+    position: relative;
+  }
+
+  .masthead-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 16px;
+  }
+
+  .foundation-name {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 4px;
+  }
+
+  .report-title {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 54px;
+    font-weight: 900;
+    line-height: 0.95;
+    color: var(--ink);
+    letter-spacing: -1px;
+  }
+
+  .report-title .the {
+    font-style: italic;
+    font-weight: 400;
+    font-size: 38px;
+    color: var(--muted);
+  }
+
+  .masthead-right {
+    text-align: right;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    color: var(--muted);
+    letter-spacing: 1px;
+    margin-top: 8px;
+  }
+
+  .masthead-right .edition {
+    font-size: 13px;
+    color: var(--red);
+    font-weight: 500;
+    display: block;
+    margin-bottom: 4px;
+    letter-spacing: 2px;
+  }
+
+  .masthead-rule {
+    border: none;
+    border-top: 1px solid var(--rule);
+    margin: 18px 0 14px;
+  }
+
+  .masthead-tagline {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10.5px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--muted);
+    text-align: center;
+  }
+
+  /* ─── BANNER ─── */
+  .quarter-banner {
+    background: var(--border-heavy);
+    color: var(--paper);
+    padding: 12px 56px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+  }
+
+  .quarter-banner .q-label {
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--gold);
+  }
+
+  /* ─── CONTENT ─── */
+  .content {
+    padding: 0 56px 56px;
+  }
+
+  /* ─── SECTION ─── */
+  .section {
+    margin-top: 44px;
+  }
+
+  .section-header {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 22px;
+    border-bottom: 2px solid var(--border-heavy);
+    padding-bottom: 10px;
+  }
+
+  .section-number {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    color: var(--red);
+    letter-spacing: 2px;
+    flex-shrink: 0;
+  }
+
+  .section-title {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--ink);
+    line-height: 1.1;
+  }
+
+  .section-subtitle {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 9.5px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 18px;
+    padding-left: 2px;
+  }
+
+  /* ─── PROSE ─── */
+  p {
+    margin-bottom: 1.1em;
+    color: var(--ink);
+    font-size: 15.5px;
+    line-height: 1.8;
+  }
+
+  p:last-child { margin-bottom: 0; }
+
+  .drop-cap::first-letter {
+    font-family: 'Playfair Display', serif;
+    font-size: 72px;
+    font-weight: 900;
+    float: left;
+    line-height: 0.7;
+    margin: 6px 10px 0 0;
+    color: var(--red);
+  }
+
+  /* ─── PULLQUOTE ─── */
+  .pullquote {
+    border-left: 4px solid var(--red);
+    background: var(--highlight);
+    padding: 18px 24px;
+    margin: 28px 0;
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 17px;
+    color: var(--ink);
+    line-height: 1.5;
+  }
+
+  .pullquote cite {
+    display: block;
+    font-style: normal;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 1.5px;
+    color: var(--muted);
+    margin-top: 8px;
+    text-transform: uppercase;
+  }
+
+  /* ─── STAT BOXES ─── */
+  .stat-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin: 28px 0;
+  }
+
+  .stat-box {
+    background: var(--section-bg);
+    border: 1px solid var(--rule);
+    border-top: 3px solid var(--red);
+    padding: 18px 16px;
+    text-align: center;
+  }
+
+  .stat-box .stat-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 34px;
+    font-weight: 900;
+    color: var(--red);
+    line-height: 1;
+    margin-bottom: 4px;
+  }
+
+  .stat-box .stat-label {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 9.5px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--muted);
+    line-height: 1.4;
+  }
+
+  /* ─── BILL TIMELINE ─── */
+  .bill-list {
+    margin: 22px 0;
+    list-style: none;
+  }
+
+  .bill-item {
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+    padding: 14px 0;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .bill-item:last-child { border-bottom: none; }
+
+  .bill-date {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 1px;
+    color: var(--red);
+    flex-shrink: 0;
+    width: 88px;
+    padding-top: 3px;
+    text-transform: uppercase;
+  }
+
+  .bill-name {
+    font-weight: 700;
+    font-size: 14px;
+    color: var(--ink);
+    margin-bottom: 2px;
+  }
+
+  .bill-desc {
+    font-size: 13px;
+    color: var(--muted);
+    line-height: 1.5;
+    font-family: 'IBM Plex Mono', monospace;
+  }
+
+  /* ─── CHART AREA ─── */
+  .chart-section {
+    background: var(--section-bg);
+    border: 1px solid var(--rule);
+    padding: 28px;
+    margin: 28px 0;
+  }
+
+  .chart-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 4px;
+    color: var(--ink);
+  }
+
+  .chart-subtitle {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 9.5px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 20px;
+  }
+
+  .pie-wrap {
+    display: flex;
+    gap: 32px;
+    align-items: center;
+  }
+
+  canvas#pieChart {
+    flex-shrink: 0;
+  }
+
+  .pie-legend {
+    flex: 1;
+    list-style: none;
+  }
+
+  .pie-legend li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    color: var(--ink);
+    margin-bottom: 9px;
+    line-height: 1.3;
+  }
+
+  .legend-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 2px;
+    flex-shrink: 0;
+  }
+
+  .legend-pct {
+    color: var(--muted);
+    font-size: 10px;
+  }
+
+  /* ─── DEBT BAR ─── */
+  .debt-tracker {
+    background: var(--border-heavy);
+    color: var(--paper);
+    padding: 24px 28px;
+    margin: 28px 0;
+  }
+
+  .debt-tracker-title {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 12px;
+  }
+
+  .debt-number {
+    font-family: 'Playfair Display', serif;
+    font-size: 48px;
+    font-weight: 900;
+    color: #fff;
+    line-height: 1;
+    margin-bottom: 6px;
+  }
+
+  .debt-sub {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    color: #c8b89a;
+    margin-bottom: 20px;
+    letter-spacing: 0.5px;
+  }
+
+  .debt-bar-wrap {
+    background: rgba(255,255,255,0.1);
+    border-radius: 3px;
+    height: 10px;
+    margin-bottom: 14px;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .debt-bar-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--gold), var(--red-light));
+    border-radius: 3px;
+    animation: barGrow 1.5s ease-out forwards;
+    transform-origin: left;
+  }
+
+  @keyframes barGrow {
+    from { width: 0% }
+    to { width: 100% }
+  }
+
+  .debt-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin-top: 4px;
+  }
+
+  .debt-stat-item .dsi-val {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    font-weight: 700;
+    color: #fff;
+  }
+
+  .debt-stat-item .dsi-label {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 1.5px;
+    color: #c8b89a;
+    text-transform: uppercase;
+  }
+
+  /* ─── LOBBY TABLE ─── */
+  .lobby-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 12px;
+    margin: 22px 0;
+  }
+
+  .lobby-table thead tr {
+    background: var(--border-heavy);
+    color: var(--paper);
+  }
+
+  .lobby-table thead th {
+    padding: 10px 14px;
+    text-align: left;
+    font-weight: 500;
+    letter-spacing: 1px;
+    font-size: 10px;
+    text-transform: uppercase;
+  }
+
+  .lobby-table tbody tr {
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .lobby-table tbody tr:nth-child(even) {
+    background: var(--section-bg);
+  }
+
+  .lobby-table td {
+    padding: 10px 14px;
+    color: var(--ink);
+    vertical-align: top;
+  }
+
+  .lobby-table .bar-cell {
+    width: 160px;
+  }
+
+  .mini-bar-bg {
+    background: var(--rule);
+    height: 6px;
+    border-radius: 2px;
+    margin-top: 5px;
+  }
+
+  .mini-bar-fill {
+    height: 100%;
+    border-radius: 2px;
+    background: var(--red);
+  }
+
+  /* ─── FORECAST ─── */
+  .forecast-item {
+    background: var(--highlight);
+    border: 1px solid var(--rule);
+    border-left: 4px solid var(--gold);
+    padding: 16px 18px;
+    margin-bottom: 14px;
+  }
+
+  .forecast-item h4 {
+    font-family: 'Playfair Display', serif;
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 4px;
+    color: var(--ink);
+  }
+
+  .forecast-tag {
+    display: inline-block;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    padding: 2px 7px;
+    border-radius: 2px;
+    margin-bottom: 8px;
+    color: #fff;
+  }
+
+  .tag-high { background: var(--red); }
+  .tag-mid  { background: var(--gold); }
+  .tag-low  { background: var(--muted); }
+
+  .forecast-item p {
+    font-size: 14px;
+    margin: 0;
+  }
+
+  .hurdle-item {
+    background: var(--section-bg);
+    border: 1px solid var(--rule);
+    border-left: 4px solid var(--red);
+    padding: 14px 18px;
+    margin-bottom: 12px;
+  }
+
+  .hurdle-item h4 {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 12px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--red);
+    margin-bottom: 5px;
+  }
+
+  .hurdle-item p {
+    font-size: 13.5px;
+    margin: 0;
+  }
+
+  /* ─── FOOTER ─── */
+  .footer {
+    background: var(--border-heavy);
+    color: var(--cream);
+    padding: 28px 56px;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 1px;
+    line-height: 1.7;
+  }
+
+  .footer-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 14px;
+  }
+
+  .footer-brand {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--gold);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+  }
+
+  .footer hr {
+    border: none;
+    border-top: 1px solid rgba(255,255,255,0.15);
+    margin-bottom: 12px;
+  }
+
+  .footer-disclaimer {
+    color: #a09480;
+    font-size: 9.5px;
+    line-height: 1.6;
+  }
+
+  /* ─── DIVIDERS ─── */
+  .rule-thin {
+    border: none;
+    border-top: 1px solid var(--rule);
+    margin: 32px 0;
+  }
+
+  .ornament {
+    text-align: center;
+    color: var(--rule);
+    font-size: 18px;
+    margin: 24px 0;
+    letter-spacing: 10px;
+  }
+
+  /* ─── SHUTDOWN CALLOUT ─── */
+  .callout-red {
+    background: #fdf0ee;
+    border: 1px solid #f0b5b0;
+    border-left: 5px solid var(--red);
+    padding: 18px 22px;
+    margin: 24px 0;
+  }
+
+  .callout-red h4 {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--red);
+    margin-bottom: 6px;
+  }
+
+  .callout-red p {
+    font-size: 14px;
+    margin: 0;
+  }
+
+  @media print {
+    body { background: white; }
+    .page { box-shadow: none; margin: 0; max-width: 100%; }
+  }
+</style>
+</head>
+<body>
+
+<div class="page">
+
+  <!-- MASTHEAD -->
+  <div class="masthead">
+    <div class="masthead-top">
+      <div>
+        <div class="foundation-name">The Blake Foundation · Independent Civic Research · Est. 2019</div>
+        <div class="report-title"><span class="the">The</span><br>Blake Report</div>
+      </div>
+      <div class="masthead-right">
+        <span class="edition">Q1 · 2026</span>
+        Volume VII, Issue I<br>
+        January 1 – March 16, 2026<br>
+        Published: March 16, 2026
+      </div>
+    </div>
+    <hr class="masthead-rule">
+    <div class="masthead-tagline">Tracking Congress · Following the Money · Serving the American People</div>
+  </div>
+
+  <!-- QUARTER BANNER -->
+  <div class="quarter-banner">
+    <span>119th Congress · Second Session</span>
+    <span class="q-label">First Quarter 2026</span>
+    <span>fiscalwatch.blakefoundation.org</span>
+  </div>
+
+  <!-- CONTENT -->
+  <div class="content">
+
+    <!-- ──────────────── SECTION I: THE BIG PICTURE ──────────────── -->
+    <div class="section">
+      <div class="section-header">
+        <span class="section-number">§ I</span>
+        <span class="section-title">The Big Picture</span>
+      </div>
+      <div class="section-subtitle">A Comprehensive Narrative of the First Quarter</div>
+
+      <p class="drop-cap">The first ten weeks of 2026 told a story that Washington has been rehearsing for years, now finally played out in full view: a Congress fractured along the fault lines of immigration policy, a national debt accelerating toward $39 trillion, a lobbying machine running at record pace, and — remarkably — a rare burst of actual legislative productivity. What began as an appropriations standoff left over from the longest government shutdown in American history ended with eleven of twelve spending bills signed into law. The twelfth remains a live grenade.</p>
+
+      <p>To understand Q1 2026, you have to understand what came before it. In the fall of 2025, the United States endured an extended government shutdown that paralyzed large swaths of federal operations. When lawmakers finally reached a deal in November 2025, they funded three agencies in full and kept the remaining nine on a temporary continuing resolution (CR) through January 30, 2026. The clock was ticking as the new year began.</p>
+
+      <p>January was dominated by the appropriations sprint. By January 22, the House had assembled and passed the final six of the year's twelve spending bills into a single package. Then, four days later, the calculus shifted. On January 24, Customs and Border Protection agents killed two American citizens — Alex Pretti and Renee Nicole Good — during protests in Minneapolis. The shooting ignited a political firestorm that would consume the next six weeks of congressional activity.</p>
+
+      <div class="pullquote">
+        "People are tired of the uncertainty. It causes so much disruption."
+        <cite>— Johnny Jones, Secretary/Treasurer, AFGE TSA Council 100, on the ongoing DHS shutdown</cite>
+      </div>
+
+      <p>Senate Democrats, citing the Minneapolis shootings, refused to support the Department of Homeland Security funding bill without legislative reforms to DHS immigration operations — body cameras for ICE agents, tighter warrant standards, revised use-of-force rules. Senate Republicans resisted nearly every proposed restriction. After a tense week of negotiations, a compromise emerged on January 29: pass five of the six remaining bills immediately, fund DHS on a two-week CR, and continue negotiating. The Senate passed this framework 71–29. But the House dragged its feet, and funding lapsed anyway over the weekend of January 31–February 2 — the first shutdown of 2026, affecting roughly half the federal government.</p>
+
+      <p>The House ultimately resolved the brief impasse, passing the package 217–214 on February 3. President Trump signed it the same day as Public Law 119-75. For a few weeks, it appeared the worst was over. Eleven of twelve agencies were now funded through September 30, 2026, and the broader federal enterprise — Defense, Labor, HHS, Education, State, Transportation, HUD — had real, full-year money for the first time in nearly two years.</p>
+
+      <div class="callout-red">
+        <h4>⚠ Ongoing: DHS Partial Shutdown — Day 30+</h4>
+        <p>The two-week DHS continuing resolution expired on February 14 without a deal, triggering a second partial shutdown affecting the Transportation Security Administration, FEMA, the Coast Guard, and the Secret Service. As of March 16, the shutdown is ongoing. TSA workers missed their first full paycheck around March 14. The House passed a full-year DHS funding bill (H.R. 7744) on March 5, 221–209, but Senate Democrats have blocked it from reaching the 60-vote threshold required for floor consideration.</p>
+      </div>
+
+      <p>What makes the DHS standoff structurally significant is what it reveals about the relationship between spending power, lobbying influence, and national debt. DHS commands a budget of $65 billion under baseline estimates — and the Trump administration's FY2026 request proposed increasing that to over $107 billion, a 65% jump driven primarily by immigration enforcement priorities. When that funding is in dispute, it doesn't just affect federal workers: it ripples outward into a web of government contractors, local governments dependent on FEMA grants, airport operators, and border-adjacent businesses, all of whom have active lobbying presences in Washington.</p>
+
+      <p>Speaking of lobbying: this quarter's activity confirms that the passage of the One Big Beautiful Bill Act (OBBA) in 2025 dramatically reorganized the influence landscape. Industries that saw their fortunes written into or out of that reconciliation law — pharmaceuticals, defense contractors, education companies, clean energy firms — have been spending at record clips in an effort to shape both the regulatory implementation of OBBA and the appropriations bills that translate its priorities into dollars. The pharmaceutical industry outspent every other sector in 2025 by a wide margin, and there is no sign of that easing in 2026. Ballard Partners, a lobbying firm with deep ties to the current administration, continued to dominate the K Street rankings.</p>
+
+      <p>All of this unfolds against the most alarming debt backdrop in American history. As of March 4, 2026, the national debt stood at $38.86 trillion — up $2.64 trillion in a single year, or roughly $7.23 billion per day. Debt held by the public has crossed 101% of GDP, a threshold the country last breached during World War II. The Congressional Budget Office projects the FY2026 deficit alone at $1.9 trillion, with net interest payments consuming nearly 14 cents of every federal dollar spent. As the Committee for a Responsible Federal Budget recently warned: we are entering the next potential economic shock "more indebted than we have ever been before."</p>
+
+      <p>The fiscal recklessness here is not primarily the fault of discretionary spending, which the eleven enacted FY2026 bills actually held relatively flat at $1.639 trillion total — only $38.5 billion above FY2025 levels. The deeper problem is structural: mandatory spending on Social Security, Medicare, and Medicaid growing automatically year over year, compounded by soaring interest costs that now dwarf what we spent on defense just a decade ago. Congress can debate DHS immigration policy all it wants, but the most consequential budget decisions are the ones no one votes on each year.</p>
+
+      <div class="stat-row">
+        <div class="stat-box">
+          <div class="stat-num">8</div>
+          <div class="stat-label">Bills Enacted<br>into Law, Q1 2026</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-num">2</div>
+          <div class="stat-label">Partial Government<br>Shutdowns, 2026</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-num">$919B</div>
+          <div class="stat-label">FY2026 Deficit<br>Through February</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="ornament">— ✦ —</div>
+
+    <!-- ──────────────── SECTION II: FOLLOW THE MONEY ──────────────── -->
+    <div class="section">
+      <div class="section-header">
+        <span class="section-number">§ II</span>
+        <span class="section-title">Follow the Money</span>
+      </div>
+      <div class="section-subtitle">Appropriations · National Debt · Lobbying</div>
+
+      <!-- APPROPRIATIONS -->
+      <p style="font-family:'Playfair Display',serif;font-size:20px;font-weight:700;margin-bottom:10px;">FY2026 Funding Appropriations</p>
+
+      <p>The eleven enacted appropriations bills total $1.639 trillion in net base discretionary spending for FY2026. This figure is deceptive on its surface: because the bills include more than 100 rescissions totaling $55.2 billion in paper cuts to unused budget authority, actual new spending authority is closer to $1.7 trillion. Defense received a significant boost, while the Departments of Education and the EPA saw reduced outlays — the former driven by lower Education Stabilization Fund disbursements, the latter reflecting the rollback of clean energy grants.</p>
+
+      <!-- PIE CHART -->
+      <div class="chart-section">
+        <div class="chart-title">FY2026 Discretionary Spending by Category</div>
+        <div class="chart-subtitle">Based on Enacted Appropriations · $1.639 Trillion Baseline · Does Not Include Mandatory Spending</div>
+        <div class="pie-wrap">
+          <canvas id="pieChart" width="240" height="240"></canvas>
+          <ul class="pie-legend" id="pieLegend"></ul>
+        </div>
+      </div>
+
+      <p>The enacted bills represent a genuine compromise in what was a deeply contentious process. The Commerce-Justice-Science, Energy-Water, and Interior-Environment package (P.L. 119-74, signed January 28) actually cut spending from FY2025 levels by nearly $4 billion. The larger Defense/Labor-HHS/Education/State/Transport-HUD package (P.L. 119-75, signed February 3) added more but kept the overall trajectory well below what a straight continuing resolution would have cost taxpayers. The missing piece — DHS, with its $65–107 billion footprint — remains in limbo.</p>
+
+      <!-- BILLS ENACTED -->
+      <p style="font-family:'Playfair Display',serif;font-size:18px;font-weight:700;margin:28px 0 6px;">Legislation Enacted, Jan 1 – Mar 16, 2026</p>
+      <ul class="bill-list">
+        <li class="bill-item">
+          <span class="bill-date">Jan 14</span>
+          <div>
+            <div class="bill-name">Whole Milk for Healthy Kids Act of 2025</div>
+            <div class="bill-desc">Restores full-fat milk options to National School Lunch Program participants, reversing decades of low-fat mandates.</div>
+          </div>
+        </li>
+        <li class="bill-item">
+          <span class="bill-date">Jan 28</span>
+          <div>
+            <div class="bill-name">P.L. 119-74 — Consolidated CJS, Energy & Water, and Interior Appropriations Act, 2026</div>
+            <div class="bill-desc">Commerce-Justice-Science · Energy & Water · Interior & Environment. Cuts ~$4B below FY2025 levels.</div>
+          </div>
+        </li>
+        <li class="bill-item">
+          <span class="bill-date">Jan 28</span>
+          <div>
+            <div class="bill-name">Trafficking Survivors Relief Act</div>
+            <div class="bill-desc">Allows trafficking victims to file motions to vacate convictions and expunge arrest records for offenses committed as a direct result of their victimization.</div>
+          </div>
+        </li>
+        <li class="bill-item">
+          <span class="bill-date">Feb 3</span>
+          <div>
+            <div class="bill-name">P.L. 119-75 — Consolidated Defense, FSGG, Labor-HHS-Education, National Security-State, and Transportation-HUD Appropriations Act, 2026</div>
+            <div class="bill-desc">Funds five major government divisions through September 30, 2026. Includes a two-week CR for DHS (through Feb 13). Passed 217–214 in the House.</div>
+          </div>
+        </li>
+        <li class="bill-item">
+          <span class="bill-date">Feb 6</span>
+          <div>
+            <div class="bill-name">Bankruptcy Administration Improvement Act</div>
+            <div class="bill-desc">Increases Chapter 7 bankruptcy-related provisions; improves trustee administration procedures.</div>
+          </div>
+        </li>
+        <li class="bill-item">
+          <span class="bill-date">Feb 10</span>
+          <div>
+            <div class="bill-name">Ending Improper Payments to Deceased People Act</div>
+            <div class="bill-desc">Permanently authorizes death-record data sharing between federal agencies to prevent and recover improper payments.</div>
+          </div>
+        </li>
+        <li class="bill-item">
+          <span class="bill-date">Feb 18</span>
+          <div>
+            <div class="bill-name">H.J.Res. 142 — D.C. Tax Conformity Nullification</div>
+            <div class="bill-desc">Congressional nullification of a District of Columbia income and franchise tax conformity amendment under the Congressional Review Act.</div>
+          </div>
+        </li>
+        <li class="bill-item">
+          <span class="bill-date">Feb 18</span>
+          <div>
+            <div class="bill-name">Semiquincentennial Congressional Time Capsule Act</div>
+            <div class="bill-desc">Directs the Architect of the Capitol to create a congressional time capsule for the 250th anniversary of the United States.</div>
+          </div>
+        </li>
+      </ul>
+
+      <hr class="rule-thin">
+
+      <!-- DEBT TRACKER -->
+      <p style="font-family:'Playfair Display',serif;font-size:20px;font-weight:700;margin-bottom:18px;">National Debt Tracker</p>
+
+      <div class="debt-tracker">
+        <div class="debt-tracker-title">■ National Debt Monitor · As of March 4, 2026</div>
+        <div class="debt-number">$38.86T</div>
+        <div class="debt-sub">Total Gross National Debt · +$2.64T year-over-year · +$10.86T since 2021</div>
+        <div class="debt-bar-wrap">
+          <div class="debt-bar-fill" style="width:100%"></div>
+        </div>
+        <div class="debt-stats">
+          <div class="debt-stat-item">
+            <div class="dsi-val">$7.23B</div>
+            <div class="dsi-label">Added per day</div>
+          </div>
+          <div class="debt-stat-item">
+            <div class="dsi-val">$113,638</div>
+            <div class="dsi-label">Per person</div>
+          </div>
+          <div class="debt-stat-item">
+            <div class="dsi-val">3.355%</div>
+            <div class="dsi-label">Avg. interest rate</div>
+          </div>
+        </div>
+      </div>
+
+      <p>The CBO's latest projections forecast the FY2026 deficit at $1.9 trillion — 5.8% of GDP. This is not a one-time shock. Net interest payments alone are projected to consume 13.85% of all federal outlays in FY2026, rising to 14.52% by FY2028. By 2036, debt held by the public is on pace to reach 120% of GDP, surpassing even the post–World War II peak of 106%. The Committee for a Responsible Federal Budget notes that when prior crisis moments — the dot-com crash, 2008, COVID — struck, the U.S. had debt-to-GDP ratios of 34%, 35%, and 79% respectively. Today the ratio is 101%. The fiscal buffer is gone.</p>
+
+      <p>Revenues in the first two months of FY2026 were actually $112 billion (18%) higher than the same period last year, driven by strong individual income tax collections and a $48 billion (287%) surge in customs duties from expanded tariffs. But that revenue growth has been swamped by mandatory spending increases in Social Security (+$10B), Medicare/Medicaid (+$10B), and net interest on the debt (+$9B) — automatic obligations no appropriations bill can touch.</p>
+
+      <hr class="rule-thin">
+
+      <!-- LOBBYING -->
+      <p style="font-family:'Playfair Display',serif;font-size:20px;font-weight:700;margin-bottom:10px;">Lobbying: The Influence Economy</p>
+
+      <p>Formal Q1 2026 lobbying disclosure filings are not yet published (reports are due mid-April, covering January through March activity). However, patterns established in 2025 provide a clear picture of where influence money is flowing and why. Lobbying spending surged dramatically in 2025 coinciding with the One Big Beautiful Bill Act, setting records across nearly every major sector. 2026 is shaping up as the implementation year — lobbying is now focused on how OBBA provisions are administered and on shaping the annual appropriations that will fund (or defund) them.</p>
+
+      <table class="lobby-table">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Industry / Sector</th>
+            <th>Key Focus (Q1 2026)</th>
+            <th class="bar-cell">Relative Activity</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td><strong>Pharmaceuticals &amp; Health Products</strong></td>
+            <td>Medicaid reimbursement rates, drug pricing rules under OBBA</td>
+            <td class="bar-cell">
+              <div class="mini-bar-bg"><div class="mini-bar-fill" style="width:100%"></div></div>
+            </td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td><strong>Defense Contractors</strong></td>
+            <td>DoD procurement, NDAA provisions, Golden Dome initiative</td>
+            <td class="bar-cell">
+              <div class="mini-bar-bg"><div class="mini-bar-fill" style="width:88%"></div></div>
+            </td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td><strong>Finance &amp; Securities</strong></td>
+            <td>Crypto regulation, tax cut implementation, banking rules</td>
+            <td class="bar-cell">
+              <div class="mini-bar-bg"><div class="mini-bar-fill" style="width:78%"></div></div>
+            </td>
+          </tr>
+          <tr>
+            <td>4</td>
+            <td><strong>Technology &amp; Telecom</strong></td>
+            <td>AI regulation preemption, broadband permitting, spectrum policy</td>
+            <td class="bar-cell">
+              <div class="mini-bar-bg"><div class="mini-bar-fill" style="width:70%"></div></div>
+            </td>
+          </tr>
+          <tr>
+            <td>5</td>
+            <td><strong>Hospitals &amp; Health Services</strong></td>
+            <td>Medicaid cuts, provider reimbursement, workforce rules</td>
+            <td class="bar-cell">
+              <div class="mini-bar-bg"><div class="mini-bar-fill" style="width:65%"></div></div>
+            </td>
+          </tr>
+          <tr>
+            <td>6</td>
+            <td><strong>Immigration / Detention Services</strong></td>
+            <td>DHS contracting, ICE facility expansion</td>
+            <td class="bar-cell">
+              <div class="mini-bar-bg"><div class="mini-bar-fill" style="width:55%"></div></div>
+            </td>
+          </tr>
+          <tr>
+            <td>7</td>
+            <td><strong>Renewable Energy</strong></td>
+            <td>Defending IRA remnants, resisting EPA rollbacks</td>
+            <td class="bar-cell">
+              <div class="mini-bar-bg"><div class="mini-bar-fill" style="width:44%"></div></div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p>The most important lobbying story of Q1 2026 is one that connects directly to the DHS standoff: private immigration detention contractors — including GEO Group and CoreCivic — have been among the most active spenders in the sector, seeking to lock in long-term federal contracts funded through both the OBBA's mandatory appropriations and whatever DHS spending bill eventually passes. On the opposite side of the ledger, renewable energy and environmental groups — watching EPA budget cuts and IRA rescissions take effect — have dramatically increased their lobbying presence, seeking to protect whatever green infrastructure dollars remain from congressional and regulatory rollback.</p>
+
+      <p>Ballard Partners, whose leadership includes former Trump administration officials, remained the premier lobbying firm in terms of billings and access during this period, continuing a dominance that began the moment the administration took office in January 2025. The revolving door between K Street and the executive branch has rarely turned faster.</p>
+    </div>
+
+    <div class="ornament">— ✦ —</div>
+
+    <!-- ──────────────── SECTION III: FORECAST ──────────────── -->
+    <div class="section">
+      <div class="section-header">
+        <span class="section-number">§ III</span>
+        <span class="section-title">Forecast</span>
+      </div>
+      <div class="section-subtitle">Major Upcoming Bills &amp; Political Hurdles · Q2 and Beyond</div>
+
+      <p>Looking ahead to Q2 2026 and the remainder of the legislative year, five major items are shaping up as the defining battles of this Congress. Each carries significant fiscal implications, and each is being actively shaped by the lobbying activity documented above.</p>
+
+      <div class="forecast-item">
+        <h4>DHS Appropriations Act, FY2026 (H.R. 7744)</h4>
+        <span class="forecast-tag tag-high">Priority: Critical</span>
+        <p>The most immediate and urgent piece of unfinished business. The House has passed this bill twice. Senate Democrats continue to block it pending immigration enforcement reforms. TSA workers are beginning to miss full paychecks as of mid-March, raising the prospect of security line disruptions at airports nationwide. A resolution — whether through a negotiated reform package or a clean CR — is expected before April, but nothing is certain. The longer the shutdown persists, the greater the pressure on both parties as the spring travel season arrives and the 2026 midterms draw closer.</p>
+      </div>
+
+      <div class="forecast-item">
+        <h4>National Defense Authorization Act, FY2026 (H.R. 3838 / S. 2296)</h4>
+        <span class="forecast-tag tag-high">Priority: High</span>
+        <p>The annual must-pass defense authorization bill is in conference between House and Senate versions. Both drafts prioritize domestic supply chain resiliency, rare earth and critical minerals, advanced AI and autonomous weapons systems, and the "Golden Dome" missile defense initiative. Counter-drone authority for major events (the 2026 FIFA World Cup, LA 2028 Olympics) is a bipartisan priority. Preemption of state AI regulations — inserted in the House version, stripped in the Senate — remains a live fault line. A final vote is expected before summer recess.</p>
+      </div>
+
+      <div class="forecast-item">
+        <h4>FY2027 Budget Resolution &amp; Potential Reconciliation Bill</h4>
+        <span class="forecast-tag tag-mid">Priority: Elevated</span>
+        <p>With the midterm elections in November 2026, Republican leadership is eyeing a second reconciliation bill to further lock in fiscal priorities before potentially losing House majority. The vehicle would likely include additional defense technology investments, border security spending, and extensions of tax provisions from OBBA. The CBO has already warned that OBBA increased projected 10-year deficits by $4.7 trillion. A follow-on reconciliation measure without offsets could add substantially to that figure. Expect fierce debate over the debt ceiling, which will need to be addressed before fiscal year 2027 begins.</p>
+      </div>
+
+      <div class="forecast-item">
+        <h4>NASA Reauthorization</h4>
+        <span class="forecast-tag tag-mid">Priority: Moderate</span>
+        <p>NASA's authorization is overdue for a comprehensive update, particularly around the Artemis lunar program's revised scope and timeline. Both NDAA drafts include Space Force and National Security Space Launch provisions, and any NASA bill will need to navigate the politically charged terrain of Artemis funding, commercial space partnerships, and the FAA's regulatory modernization — all of which carry significant contractor lobbying interests.</p>
+      </div>
+
+      <div class="forecast-item">
+        <h4>SBIR / STTR Reauthorization</h4>
+        <span class="forecast-tag tag-low">Priority: Monitoring</span>
+        <p>The Small Business Innovation Research and Small Business Technology Transfer programs — which direct a portion of federal R&amp;D spending to small businesses — face reauthorization. These programs are often included in the NDAA as a vehicle. If they slip past the NDAA deadline, a standalone bill becomes necessary. Stakes are modest fiscally but matter significantly to the startup and academic research communities.</p>
+      </div>
+
+      <p style="font-family:'Playfair Display',serif;font-size:19px;font-weight:700;margin:28px 0 10px;">Political Hurdles to Watch</p>
+
+      <div class="hurdle-item">
+        <h4>⚠ The 60-Vote Senate Threshold</h4>
+        <p>The DHS shutdown has thrown into stark relief how the Senate filibuster — requiring 60 votes to advance most legislation — continues to shape (and block) major legislation. Republicans hold 53 seats and cannot move DHS funding without some Democratic cooperation. This dynamic will define Q2 legislative strategy across every major bill.</p>
+      </div>
+
+      <div class="hurdle-item">
+        <h4>⚠ The Debt Ceiling</h4>
+        <p>The CBO projects debt will reach $39 trillion as early as late March 2026 and continue climbing toward $40 trillion by late 2026. The debt ceiling — last raised by the OBBA — will need to be addressed again, likely during FY2027 budget negotiations. Fiscal hawks in both parties have signaled that a clean debt ceiling raise will be difficult to pass without accompanying spending reforms, setting up a potential crisis moment in late Q3 or Q4 2026.</p>
+      </div>
+
+      <div class="hurdle-item">
+        <h4>⚠ Midterm Positioning</h4>
+        <p>With the November 2026 midterms just eight months away, every major vote is now viewed through an electoral lens. House Republicans, holding a razor-thin majority, face internal pressures from fiscal conservatives who oppose any spending increases and from moderates who fear being tagged with shutdown politics. Democrats, out of power but wielding the Senate filibuster, must weigh the political cost of sustaining a DHS shutdown against the leverage it provides on immigration reform. The result is a Congress where the incentive to govern is frequently overwhelmed by the incentive to campaign.</p>
+      </div>
+
+      <div class="hurdle-item">
+        <h4>⚠ AI Regulation Preemption</h4>
+        <p>A sleeper issue that could become a major fight: the House NDAA includes language preempting state-level AI regulations, effectively handing regulatory authority to the federal government. At least 16 states have passed or are considering their own AI rules. Tech industry lobbyists support federal preemption; civil society and several state governors oppose it. If this provision survives conference and reaches a floor vote, it will be one of the most consequential tech-policy decisions in years — regardless of which direction it goes.</p>
+      </div>
+    </div>
+
+    <hr class="rule-thin">
+    <p style="text-align:center;font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:1.5px;color:var(--muted);padding:8px 0 0;">Sources: U.S. Treasury Fiscal Data · Congressional Budget Office · Bipartisan Policy Center · OpenSecrets · CRFB · Congress.gov · Joint Economic Committee · Wikipedia</p>
+  </div>
+
+  <!-- FOOTER -->
+  <div class="footer">
+    <div class="footer-top">
+      <div>
+        <div class="footer-brand">The Blake Foundation</div>
+        A 501(c)(3) Nonpartisan Civic Research Organization
+      </div>
+      <div style="text-align:right;">
+        The Blake Report · Q1 2026<br>
+        Published March 16, 2026
+      </div>
+    </div>
+    <hr>
+    <div class="footer-disclaimer">
+      The Blake Foundation is committed to providing accurate, nonpartisan tracking of U.S. congressional activity, federal spending, lobbying, and national debt on behalf of the American people. The Blake Report is published quarterly. Lobbying activity figures represent estimates based on 2025 trailing data and published sector trends; Q1 2026 formal disclosures will be available April 2026. All debt and deficit figures sourced from the U.S. Treasury, Congressional Budget Office, and the Joint Economic Committee. This newsletter is produced for informational purposes only and does not constitute legal, financial, or policy advice. © 2026 The Blake Foundation. All rights reserved. Reproduction with attribution permitted.
+    </div>
+  </div>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.3/dist/chart.umd.min.js"></script>
+<script>
+  const data = [
+    { label: "Defense & Veterans Affairs", pct: 30.2, color: "#3d3025" },
+    { label: "Health & Human Services / Labor / Education", pct: 22.1, color: "#b5271e" },
+    { label: "Transportation & Housing (HUD)", pct: 11.4, color: "#c9922a" },
+    { label: "Commerce, Justice & Science", pct: 8.3, color: "#7a6e60" },
+    { label: "State & National Security", pct: 6.8, color: "#5c8a6e" },
+    { label: "Energy & Water", pct: 6.2, color: "#4a6fa5" },
+    { label: "Interior & Environment", pct: 4.6, color: "#8a5c9e" },
+    { label: "Financial Services & General Gov.", pct: 4.2, color: "#9e7a5c" },
+    { label: "Agriculture (full-year FY2025 deal)", pct: 3.1, color: "#5c8a7a" },
+    { label: "Veterans Affairs / Mil. Construction", pct: 2.1, color: "#a5854a" },
+    { label: "Legislative Branch", pct: 1.0, color: "#c8b89a" },
+  ];
+
+  const canvas = document.getElementById('pieChart');
+  new Chart(canvas, {
+    type: 'doughnut',
+    data: {
+      labels: data.map(d => d.label),
+      datasets: [{
+        data: data.map(d => d.pct),
+        backgroundColor: data.map(d => d.color),
+        borderWidth: 2,
+        borderColor: '#f5f0e8',
+        hoverBorderWidth: 3,
+      }]
+    },
+    options: {
+      responsive: false,
+      plugins: {
+        legend: { display: false },
+        tooltip: {
+          callbacks: {
+            label: (ctx) => ` ${ctx.label}: ${ctx.parsed}%`
+          }
+        }
+      },
+      cutout: '55%',
+      animation: { animateRotate: true, duration: 1200 }
+    }
+  });
+
+  const legend = document.getElementById('pieLegend');
+  data.forEach(d => {
+    const li = document.createElement('li');
+    li.innerHTML = `<span class="legend-dot" style="background:${d.color}"></span><span>${d.label} <span class="legend-pct">${d.pct}%</span></span>`;
+    legend.appendChild(li);
+  });
+</script>
+</body>
+</html>
